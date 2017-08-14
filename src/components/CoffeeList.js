@@ -1,6 +1,6 @@
 import React from 'react'
 import Coffee from './Coffee'
-import { Item } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 const CoffeeList = ({coffees, remove}) => {
   const coffeeNodes = coffees.map((coffee) => {
@@ -8,7 +8,7 @@ const CoffeeList = ({coffees, remove}) => {
   })
 
   return (
-    <Item.Group relaxed>{coffeeNodes}</Item.Group>
+    <Card.Group itemsPerRow={3}>{coffeeNodes}</Card.Group>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { BrowserRouter as Router } from 'react-router-dom';
-import { Container, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Container, Divider, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import CoffeeInput from './CoffeeInput';
 import CoffeeList from './CoffeeList';
 import firebase, { auth, provider } from '../firebase';
@@ -90,7 +90,9 @@ class App extends Component {
         <Sidebar.Pusher>
           <Segment basic>
             <Container>
+              <Divider hidden />
               { this.state.user && <CoffeeInput addCoffee={this.addCoffee} /> }
+              <Divider horizontal>Coffees</Divider>
               <CoffeeList 
                 coffees={this.state.coffees}
                 remove={this.removeCoffee}

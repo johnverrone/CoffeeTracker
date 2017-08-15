@@ -8,7 +8,7 @@ const CoffeeList = ({coffees, remove}) => {
   })
 
   return (
-    <Card.Group itemsPerRow={3}>{coffeeNodes}</Card.Group>
+    <Card.Group itemsPerRow={3} stackable>{coffeeNodes}</Card.Group>
   )
 }
 

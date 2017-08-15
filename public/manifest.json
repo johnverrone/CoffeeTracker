@@ -1,10 +1,15 @@
 {
-  "short_name": "Coffee Tracker",
+  "short_name": "Coffee",
   "name": "Coffee Tracker",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "icon-192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],

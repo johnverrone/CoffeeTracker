@@ -4,6 +4,8 @@ node_js:
   - "7"
 script: yarn build
 cache: yarn
+notifications:
+  email: false
 deploy:
   provider: firebase
   token:

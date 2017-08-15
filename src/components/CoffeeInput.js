@@ -23,8 +23,10 @@ const CoffeeInput = ({addCoffee}) => {
         </Card.Content>
         <Card.Content extra>
           <Button floated='right' onClick={() => {
-            addCoffee({name: name.value})
+            addCoffee({name: name.value, roaster: roaster.value, description: description.ref.value})
             name.value = ''
+            roaster.value = ''
+            description.ref.value = ''
           }}>
             Add
           </Button>

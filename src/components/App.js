@@ -33,7 +33,9 @@ class App extends Component {
       for (let coffee in coffees) {
         newState.push({
           id: coffee,
-          name: coffees[coffee].name
+          name: coffees[coffee].name,
+          roaster: coffees[coffee].roaster,
+          description: coffees[coffee].description
         })
       }
       this.setState({

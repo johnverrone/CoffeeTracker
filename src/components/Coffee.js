@@ -4,7 +4,7 @@ import { Button, Card, Icon, Image } from 'semantic-ui-react'
 const Coffee = ({coffee, remove}) => {
   return (
     <Card>
-      <Image src={require('../assets/empty_coffee.png')} />
+      <Image alt='coffee_image' src={require('../assets/empty_coffee.png')} />
       <Card.Content>
         <Card.Header as='a'>{coffee.name}</Card.Header>
         <Card.Meta>{coffee.roaster || 'roaster'}</Card.Meta>

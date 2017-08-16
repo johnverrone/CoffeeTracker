@@ -2,11 +2,12 @@ language: node_js
 node_js:
   - "8"
   - "7"
+script: yarn build
 cache: yarn
 notifications:
   email: false
-before_deploy: yarn build
 deploy:
   provider: firebase
+  skip_cleanup: true
   token:
     secure: FCwxodJk/aClPy75KxFtY30q3kWefIDntVFkXwjUnCK9Cw3L2UEMfJYogGwLkCZjPTcyYPG9nyRqnwskbS+0yeZuZ5/U7CvawETGUjnQatePfhV1HkXCpU/whiQLSbj9ZtiWMeHyT84Fs0tNna+9d1xPvbtxHgySMLAYIT0rR6I4Tz9pSRZX35/SJZGTNb1FbZpmgnOtJA5D16hpF4/gROkF6SMc3ocYXXyCaAgcg3xtCITMfD8T+v7vW5PO1ew/x34bm3QHMedA2FBOz0bk4SBu2lZ2ut5RchnDdDJE+LU7VAohU4BRvOLTT2tcD4itIDIqUstup0+VvB4d5E9eqVGm3rcAijuSLGX7ZVwFASbk7gzq1tY6DKKoxwPwjHXSRT7Umx0+bnmilBr07vwYRTj81VlsY5pqFB7+1qYaP6Tu0NUG1SyUO8211WT4XBX0/kZ6vcD52tVDgoXbYP/r+ahalXDI0min4fGVsYWi5fWXENVGzPY1VKDqDpugQ5USxvn9MDajMsSjSuNMBwJKG+znU1zDlZTmgBM3gG/FMUFy8ngQYC2YWRYX84HwxMVLckpwI8wZCbgPPU7jBdINUrIbqRgMWn3bzisjGzULctVFfE1UuKjy02FwEt8v6l9q5DQjCNGDtx3yxsZdskYF3VKStt67heNUpqtlQHNUCZU=

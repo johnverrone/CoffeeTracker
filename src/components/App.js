@@ -98,6 +98,7 @@ class App extends Component {
               <CoffeeList 
                 coffees={this.state.coffees}
                 remove={this.removeCoffee}
+                editable={this.state.user}
               />
             </Container>
           </Segment>

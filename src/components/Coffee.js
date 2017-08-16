@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Icon, Image } from 'semantic-ui-react'
 
-const Coffee = ({coffee, remove}) => {
+const Coffee = ({coffee, remove, editable}) => {
   return (
     <Card>
       <Image alt='coffee_image' src={require('../assets/empty_coffee.png')} />
@@ -12,11 +12,13 @@ const Coffee = ({coffee, remove}) => {
           {coffee.description || 'This is the Brazil Parana brought to you by Good Folks Coffee. This full natural coffee was grown by the Fazenda California in the Jacarezhino, Parana region of Guatemala between 900 - 1,000 meters above sea level. This coffee is rich and comforting, with candy bar-like notes of sweet milk chocolate and peanut butter.'}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
-        <Button floated='right' onClick={() => remove(coffee.id)}>
-          <Icon name='close' />Delete
-        </Button>
-      </Card.Content>
+      { editable && 
+        <Card.Content extra>
+          <Button floated='right' onClick={() => remove(coffee.id)}>
+            <Icon name='close' />Delete
+          </Button> 
+        </Card.Content>
+      }
     </Card>
   )
 }

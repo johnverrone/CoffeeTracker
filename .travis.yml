@@ -2,10 +2,10 @@ language: node_js
 node_js:
   - "8"
   - "7"
-script: yarn build
 cache: yarn
 notifications:
   email: false
+before_deploy: yarn build
 deploy:
   provider: firebase
   token:

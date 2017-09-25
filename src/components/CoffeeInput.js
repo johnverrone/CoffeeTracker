@@ -1,13 +1,14 @@
 import React from 'react'
-import { Button, Card, Form, TextArea } from 'semantic-ui-react'
+import { Button, Form, Modal, TextArea } from 'semantic-ui-react'
 
 const CoffeeInput = ({addCoffee}) => {
   let name, roaster, description;
 
   return (
-    <Form>
-      <Card fluid>
-        <Card.Content>
+    <Modal trigger={<Button>Add New Coffee</Button>}>
+      <Modal.Header>Add New Coffee</Modal.Header>
+      <Modal.Content>
+        <Form>
           <Form.Field>
             <label>Name</label>
             <input type="text" name="name" ref={node => {name = node}} />
@@ -20,19 +21,19 @@ const CoffeeInput = ({addCoffee}) => {
             <label>Description</label>
             <TextArea type="text" name="description" ref={node => {description = node}} />
           </Form.Field>
-        </Card.Content>
-        <Card.Content extra>
-          <Button floated='right' onClick={() => {
-            addCoffee({name: name.value, roaster: roaster.value, description: description.ref.value})
-            name.value = ''
-            roaster.value = ''
-            description.ref.value = ''
-          }}>
-            Add
-          </Button>
-        </Card.Content>
-      </Card>
-    </Form>
+        </Form>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={() => {
+          addCoffee({name: name.value, roaster: roaster.value, description: description.ref.value})
+          name.value = ''
+          roaster.value = ''
+          description.ref.value = ''
+        }}>
+          Add
+        </Button>
+      </Modal.Actions>
+    </Modal>
   )
 }
 

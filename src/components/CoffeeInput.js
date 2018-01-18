@@ -30,6 +30,10 @@ class CoffeeInput extends React.Component {
                 <input type="text" name="roaster" ref={node => {roaster = node}} />
               </Form.Field>
               <Form.Field>
+                <label>Upload an image</label>
+                <input type="file" name="picture" />
+              </Form.Field>
+              <Form.Field>
                 <label>Description</label>
                 <TextArea type="text" name="description" ref={node => {description = node}} />
               </Form.Field>

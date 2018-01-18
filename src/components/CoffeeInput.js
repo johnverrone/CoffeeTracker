@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Button, Form, Modal, TextArea } from 'semantic-ui-react'
 
-class CoffeeInput extends React.Component {
+class CoffeeInput extends Component {
   constructor(props) {
     super(props)
     this.state = { open: false }
@@ -42,7 +43,7 @@ class CoffeeInput extends React.Component {
           <Modal.Actions>
             <Button onClick={this.close}>Cancel</Button>
             <Button positive onClick={() => {
-              this.props.addCoffee({name: name.value, roaster: roaster.value, description: description.ref.value})
+              this.props.addCoffee({name: name.value, roaster: roaster.value, description: description.ref.value, user: this.props.userId})
               name.value = ''
               roaster.value = ''
               description.ref.value = ''
@@ -55,6 +56,10 @@ class CoffeeInput extends React.Component {
       </div>
     )
   }
+}
+
+CoffeeInput.propTypes = {
+  userId: PropTypes.any.isRequired
 }
 
 export default CoffeeInput

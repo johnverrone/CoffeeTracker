@@ -31,12 +31,14 @@ class App extends Component {
       let coffees = snapshot.val()
       let newState = [];
       for (let coffee in coffees) {
-        newState.push({
-          id: coffee,
-          name: coffees[coffee].name,
-          roaster: coffees[coffee].roaster,
-          description: coffees[coffee].description
-        })
+        if (coffees[coffee].user === this.state.user.uid) {
+          newState.push({
+            id: coffee,
+            name: coffees[coffee].name,
+            roaster: coffees[coffee].roaster,
+            description: coffees[coffee].description
+          })
+        }
       }
       this.setState({
         coffees: newState
@@ -93,8 +95,8 @@ class App extends Component {
           <Segment basic>
             <Container>
               <Divider hidden />
-              { this.state.user && <CoffeeInput addCoffee={this.addCoffee} /> }
-              <Divider horizontal>Coffees</Divider>
+              { this.state.user && <CoffeeInput addCoffee={this.addCoffee} userId={this.state.user.uid}/> }
+              <Divider horizontal>Your Coffees</Divider>
               <CoffeeList 
                 coffees={this.state.coffees}
                 remove={this.removeCoffee}
